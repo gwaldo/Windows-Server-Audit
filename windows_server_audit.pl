@@ -151,20 +151,23 @@ while((my $key, my $value) = each(%domains)) {
  
                 #---Making Data Meaningful--- 
                 #---OS--- 
-                if ($strCaption =~/2008/) { 
-                    $strWinVer = "Win2k8"; 
+                if ($strCaption =~/2012/) {
+                	$strWinVer = "Win2012";
+                }
+                elsif ($strCaption =~/2008/) { 
+                    $strWinVer = "Win2008"; 
                 } 
                 elsif ($strCaption =~/2003/) { 
-                    $strWinVer = "Win2k3"; 
+                    $strWinVer = "Win2003"; 
                 } 
                 elsif ($strCaption =~/2000/) { 
-                    $strWinVer = "Win2k"; 
+                    $strWinVer = "Win2000"; 
                 } 
                 elsif ($strCaption =~/NT/) { 
                     $strWinVer = "WinNT"; 
                 } 
                 else { 
-                    $strWinVer = "Unexpected Version"; 
+                    $strWinVer = "Unexpected Version - \'$strCaption\'"; 
                 } 
  
                 #---Edition--- 
@@ -184,7 +187,7 @@ while((my $key, my $value) = each(%domains)) {
                     $strEdition = "Advanced"; 
                 } 
                 else { 
-                    $strEdition = "Unexpected Edition"; 
+                    $strEdition = "Unexpected Edition - \'$strCaption\'"; #not sure if this is completely correct
                 } 
  
                 #---R2, or not to R2... That is the question--- 
